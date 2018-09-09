@@ -1,0 +1,58 @@
+language,subdataA,Description,id
+python,interpreted,processed at runtime by the interpreter.no need to compile your program before executing it,1
+python,interactive,interact with the interpreter directly to write your programs,2
+python,cgi,common gateway interface is a set of standards that define how information is exchanged between the web server and a custom script.,3
+python,pythonpath,it has a role similar to path. this variable tells the Python interpreter where to locate the module files imported into a program. It should include the Python source library directory and the directories containing Python source code.,4
+python,pythonstartup,it contains the path of an initialization file containing python source code. it is executed every time you start the interpreter. ,5
+python,pythoncaseok,it is used in windows to instruct python to find the first case insensitive match in an import statement.,6
+python,pythonhome,it is an alternative module search path. it is usually embedded in the pythonstartup or pythonpath directories to make switching module libraries easy.,7
+python,data types,numbers string list tuple dictionary,8
+python,tuple,sequence data type that is similar to the list,9
+python,mysqldb,interface for connecting to a my sql database server from python,10
+python,shallow copy,it used when a new instance type gets created and it keeps the values that are copied in the new instance,11
+python,ternary operator,it used to show the conditional statements. this consists of the true or false values with a statement that has to be evaluated for it.,12
+python,single inheritance,where a derived class acquires the members of a single super class.,13
+python,hierarchical inheritance,from one base class can inherit any number of child classes,14
+python,multiple inheritance,a derived class is inherited from more than one base class,15
+python,monkey patching,dynamic modifications of a class or module at run time,16
+python,pickling,accepts any python object and converts it into a string representation and dumps it into a file by using dump function ,17
+python,unpickling,process of retrieving original Python objects from the stored string representation,18
+python,map function,executes the function given as the first argument on all the elements of the iterable given as the second argument.,19
+python,decorators,decorators in python are used to modify or inject code in functions or classes,20
+java,object,objects have states and behaviors.an object is an instance of a class.,1
+java,encapsulation,mechanism of wrapping the data and code acting on the data together as a single unit.,2
+java,overriding,having two methods with the same method name and parameters.one of the methods is in the parent class and the other is in the child class. overriding allows a child class to provide a specific implementation of a method that is already provided its parent class.,3
+java,overloading,two or more methods in one class have the same method name but different parameters.,4
+java,while loop,repeats a statement or group of statements while a given condition is true. it tests the condition before executing the loop body.,5
+java,for loop,execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.,6
+java,do while loop,"like a while statement, except that it tests the condition at the end of the loop body.",7
+java,input stream,the input stream is used to read data from a source.,8
+java,output stream,the output stream is used for writing data to a destination.,9
+java,catching exceptions,a method catches an exception using a combination of the try and catch keywords.,10
+java,finally block,"the finally block follows a try block or a catch block. a finally block of code always executes, irrespective of occurrence of an exception.",11
+java,java virtual machine exceptions,these are exceptions that are exclusively or logically thrown by the jvm.,12
+java,programmatic exceptions,these exceptions are thrown explicitly by the application or the api programmers.,13
+java,non static nested classes,these are the non static members of a class.,14
+java,static nested classes,these are the static members of a class.,15
+java,inheritance,the process where one class acquires the properties of another. with the use of inheritance the information is made manageable in a hierarchical order.,16
+angularjs,definition,an open source java script framework designed for creating dynamic single web page applications with fewer lines of code,1
+angularjs,key features,scope controller model view services data binding directives filters testable,2
+angularjs,scope,special java script object that joining the controller with the views ,3
+angularjs,data binding,automatic attunement of data between the view and model components,4
+angularjs,one way binding,scope variable in the html is set to the first value that its model is assigned to,5
+angularjs,directives,markers on a dom element that tell the html compiler to attach a specified behavior to the dom element,6
+angularjs,dirty checking,all new scope model values are compared against the previous values,7
+angularjs,link function,combines the directives with a scope to produce a live view,8
+angularjs,end to end testing,testing an application from start to finish to determine whether all the components are working properly,9
+angularjs,dependency injection,dependent objects are injected rather than being created by the consumer,10
+angularjs,benefits of dependency injection,testing and decoupling,11
+angularjs,single page application,pages are loaded from the server by creating a single shell page or master page and loading the web pages into the master page,12
+angularjs,controllers,java script functions that are bound to a particular scope,13
+angularjs,services,singleton objects which are instantiated only once in app,14
+angularjs,filters,used to show filtered items from a list of items based on defined criteria,15
+angularjs,templates,rendered view with information from the controller and model,16
+angularjs,routing,controller decides which view to render based on the business logic,17
+angularjs,deep linking,allows you to encode the state of application in the URL so that it can be bookmarked,18
+angularjs,model,lowest level of the pattern responsible for maintaining data,19
+angularjs,view,responsible for displaying all or a portion of the data to the user,20
+angularjs,controller,software code that controls the interactions between the model and view,21
