@@ -1,0 +1,103 @@
+//CV db
+CREATE (J1:root{topic:"CV"}),
+ (J2:CV{id:1,topic:"yourself",session:1}),
+ (J3:CV{id:2,topic:"your strengths",session:2}),
+ (J4:CV{id:3,topic:"your weaknesses",session:2}),
+ (J5:CV{id:4,topic:"your ideal company",session:2}),
+ (J6:CV{id:5,topic:"your projects",session:3}),
+ (J7:CV{id:6,topic:"familiar technologies",session:3}),
+ (J8:project{pid:"p1",topic:"project one"}),
+ (J9:project{pid:"p2",topic:"project two"}),
+ (J10:project{pid:"p3",topic:"project three"}),	
+
+ (J11:project_d{uid:"uid001",topic:"final year project",technologies:"java,python"}),
+ (J12:project_d{uid:"uid002",topic:"final year project",technologies:"python"}),
+
+ (J13:project_d{uid:"uid001",topic:"second year project",technologies:"java,python"}),
+ (J14:project_d{uid:"uid002",topic:"second year project",technologies:"python"}),
+
+ (J15:project_d{uid:"uid001",topic:"first year project",technologies:"java,python"}),
+ (J16:project_d{uid:"uid002",topic:"first year project",technologies:"python"})
+
+ MERGE(J1)-[r1:details]->(J2)
+ MERGE(J1)-[r2:details]->(J3)
+ MERGE(J1)-[r3:details]->(J4)
+ MERGE(J1)-[r4:details]->(J5)
+ MERGE(J1)-[r5:details]->(J6)
+ MERGE(J1)-[r6:details]->(J7)
+ MERGE(J6)-[r7:projects]->(J8)
+ MERGE(J6)-[r8:projects]->(J9)
+ MERGE(J6)-[r9:projects]->(J10)
+ MERGE(J8)-[r10:projects_details]->(J11)
+ MERGE(J8)-[r11:projects_details]->(J12)
+ MERGE(J9)-[r12:projects_details]->(J13)
+ MERGE(J9)-[r13:projects_details]->(J14)
+ MERGE(J10)-[r14:projects_details]->(J15)
+ MERGE(J10)-[r15:projects_details]->(J16)
+
+
+//difficulty level db
+CREATE (J1:root{topic:"difficulty levels"}),
+ (J2: user_difficulty{uid:"uid001" }),
+ (J3: user_difficulty{uid:"uid002 "}),
+ (J4: user_difficulty{uid:"uid003"}),
+ (J5: difficulty{technology:"java",easy:"1,2,5,6,9,15",medium:"3,7,10,12",hard:"4,8,11,13,14"}),
+ (J6: difficulty{technology:"python",easy:"1,2,5,6,9,15,17,20",
+  medium:"3,7,10,12,16,18,19",hard:"4,8,11,13,14,17"})
+
+ MERGE(J1)-[r1:level]->(J2)
+ MERGE(J1)-[r2:level]->(J3)
+ MERGE(J1)-[r3:level]->(J4)
+ MERGE(J2)-[r4:level]->(J5)
+ MERGE(J2)-[r5:level]->(J6)
+
+
+//technical db
+LOAD CSV WITH HEADERS FROM 'file:///C:/csvdata4.csv' AS line
+MERGE (a:root {Name: 'technical' })
+MERGE (x:language {Name: line.language })
+MERGE (y:sub {id:line.id,Name:line.subdataA,Details:line.Description})
+MERGE (a) -[:have]->(x) 
+MERGE (x) -[:has]-> (y)
+
+
+//session db
+//create root
+
+CREATE (c:root{Name:'Session'})
+
+
+
+//create new user
+
+MATCH (c:root{Name:'Session'})
+
+CREATE (c) -[x:rootTOuser]-> (a: user{Userid :'UID002'})
+
+
+
+
+
+//CREATE NEW SESSION(that will included users questions answers)
+
+MATCH (a: user{Userid :'UID001'}) 
+CREATE (a) - [r: userTOsession]->(b:session{no : '2'})
+
+
+
+
+
+
+//correct for create new attribute in session (if you wanna add a new question and a mark)
+
+MATCH (a: user{Userid :'UID001'}) - [r: userTOsession]->(b:session{no : '1'})
+SET b.question2 = '0.7'
+RETURN b
+
+
+
+
+
+
+
+
